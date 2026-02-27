@@ -1,0 +1,22 @@
+# Ambientes Virtuais (Virtual environments)
+venv/
+env/
+.venv/
+.env
+
+# Ficheiros compilados do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ficheiros do Jupyter Notebook (caso decidas adicionar análises visuais depois)
+.ipynb_checkpoints/
+
+# Configurações de IDEs (VS Code, PyCharm, etc.)
+.vscode/
+.idea/
+
+# Ficheiros temporários do Sistema Operativo
+.DS_Store
+Thumbs.db
