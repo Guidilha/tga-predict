@@ -35,3 +35,15 @@ Os dados crus (como desenvolvedoras, publishers e datas de lançamento) precisav
 Certifique-se de ter o Python instalado e as bibliotecas necessárias.
 ```bash
 pip install -r requirements.txt
+
+## 📊 Resultados e Insights Analíticos
+
+Durante o desenvolvimento e validação do modelo, documentaram-se duas grandes descobertas sobre a natureza dos dados e da própria premiação:
+
+**1. O Paradoxo Temporal e a Evolução das Features (Data Drift)**
+Identificou-se que o modelo apresenta uma precisão consideravelmente maior para edições recentes do TGA em comparação com edições mais antigas (ex: 2015). A análise revelou que a métrica `qtd_user_score` (volume de avaliações no Metacritic e similares) é um forte preditor de vitória. 
+* **Conclusão:** Como o engajamento nestas plataformas era muito menor há uma década, os dados históricos antigos não refletem o peso real que a "voz da comunidade" tem hoje. Apesar de uma menor precisão em *backtesting* de anos antigos, o modelo possui altíssima funcionalidade para prever edições futuras, onde este comportamento digital se mantém.
+
+**2. O Limite Matemático da Subjetividade (Grupos de Controlo)**
+A arquitetura do projeto foi desenhada para testar os limites do algoritmo. Categorias como "Melhor Jogo para Família" e "Melhor Narrativa" foram incluídas como um *grupo de controlo negativo*.
+* **Conclusão:** Ao contrário da categoria GOTY (guiada por sucesso comercial e técnico), estas categorias de nicho são dominadas pela extrema subjetividade humana. Os dados confirmaram esta hipótese: a precisão do modelo cai drasticamente nestas categorias (chegando a errar a previsão de "Família" em testes fechados). Isto valida empiricamente que dados objetivos de mercado não são suficientes para modelar escolhas puramente qualitativas de um júri.
