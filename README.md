@@ -29,13 +29,6 @@ Os dados crus (como desenvolvedoras, publishers e datas de lançamento) precisav
 * **Treino:** Histórico de vencedores e indicados de edições anteriores.
 * **Teste/Predição:** A edição do ano corrente (2025).
 
-## 🚀 Como Executar o Projeto
-
-### Pré-requisitos
-Certifique-se de ter o Python instalado e as bibliotecas necessárias.
-```bash
-pip install -r requirements.txt
-
 ## 📊 Resultados e Insights Analíticos
 
 Durante o desenvolvimento e validação do modelo, documentaram-se duas grandes descobertas sobre a natureza dos dados e da própria premiação:
@@ -47,3 +40,11 @@ Identificou-se que o modelo apresenta uma precisão consideravelmente maior para
 **2. O Limite Matemático da Subjetividade (Grupos de Controlo)**
 A arquitetura do projeto foi desenhada para testar os limites do algoritmo. Categorias como "Melhor Jogo para Família" e "Melhor Narrativa" foram incluídas como um *grupo de controlo negativo*.
 * **Conclusão:** Ao contrário da categoria GOTY (guiada por sucesso comercial e técnico), estas categorias de nicho são dominadas pela extrema subjetividade humana. Os dados confirmaram esta hipótese: a precisão do modelo cai drasticamente nestas categorias (chegando a errar a previsão de "Família" em testes fechados). Isto valida empiricamente que dados objetivos de mercado não são suficientes para modelar escolhas puramente qualitativas de um júri.
+
+## 🚀 Como Executar o Projeto
+
+### Pré-requisitos
+Certifique-se de ter o Python instalado e as bibliotecas necessárias.
+```bash
+pip install -r requirements.txt
+
